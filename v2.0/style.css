@@ -1,0 +1,149 @@
+:root {
+    --red: #ff003c;
+    --yellow: #f1c40f;
+    --dark: #0a0a0a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* Toglie il flash blu al tocco su mobile */
+}
+
+body {
+    background-color: var(--dark);
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--white);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-width: 500px; /* Limite per desktop, perfetto per mobile */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Header */
+.header h1 {
+    font-size: 3.5rem;
+    line-height: 0.9;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.header span { color: var(--red); }
+.rank { font-size: 1.5rem; color: var(--yellow); }
+
+/* Tachimetro Mobile */
+.gauge-container {
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.gauge-bg { fill: none; stroke: #333; stroke-width: 8; stroke-linecap: round; }
+.gauge-fill {
+    fill: none;
+    stroke: var(--red);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 126;
+    stroke-dashoffset: 126; /* Gestito da JS */
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.rpm-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+}
+
+/* Pedale - Mobile First (Grosso e facile da cliccare) */
+.pedal-area {
+    margin-top: auto;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#gas-pedal {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #222, #000);
+    border: 5px solid var(--red);
+    color: var(--white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 20px rgba(255, 0, 60, 0.4);
+    cursor: pointer;
+}
+
+#gas-pedal:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 40px var(--red);
+    background: var(--red);
+}
+
+/* Effetto Glitch Mobile */
+.hidden { display: none !important; }
+
+#shout-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--dark);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.glitch-text {
+    font-size: 3rem;
+    color: var(--white);
+    text-transform: uppercase;
+    position: relative;
+    animation: shake 0.1s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, -2px); }
+    100% { transform: translate(1px, -1px); }
+}
+
+#flash-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 200;
+}
+
+.flash-active { animation: flash-anim 0.2s 3; }
+@keyframes flash-anim { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+.retry-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: var(--yellow);
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}

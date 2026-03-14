@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Baldoin 18 - FULL GAS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app">
+        <div id="flash-overlay"></div>
+
+        <section id="intro" class="active">
+            <div class="header">
+                <span class="rank">#18</span>
+                <h1>FEDERICO <br><span>BALDOIN</span></h1>
+            </div>
+            <div class="kart-container">
+                <div class="kart-emoji">🏎️</div>
+                <div class="smoke"></div>
+            </div>
+            <p class="instruction">TIENI PREMUTO IL PEDALE PER SCATENARE L'INFERNO</p>
+        </section>
+
+        <div class="dashboard">
+            <div class="gauge-container">
+                <svg viewBox="0 0 100 50" class="gauge">
+                    <path class="gauge-bg" d="M10,45 A40,40 0 0,1 90,45" />
+                    <path id="gauge-progress" class="gauge-fill" d="M10,45 A40,40 0 0,1 90,45" />
+                </svg>
+                <div class="rpm-text"><span id="rpm-value">0</span>%</div>
+            </div>
+
+            <div class="pedal-area">
+                <button id="gas-pedal">PUSH</button>
+            </div>
+        </div>
+
+        <div id="shout-screen" class="hidden">
+            <div class="glitch-wrapper">
+                <h2 class="glitch-text" data-text="DIO CAN 18 ANNI">
+                    DIO CAN 18 ANNI
+                </h2>
+            </div>
+            <button onclick="location.reload()" class="retry-btn">ANCORA!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
