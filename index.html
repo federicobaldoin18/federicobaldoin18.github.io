@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auguri Federico! 🏎️💨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="dashboard" class="screen">
+        <h1 class="title">BALDOIN EDITION - 18 ANNI</h1>
+        <p class="subtitle">Tieni premuto l'acceleratore per avviare il kart!</p>
+        
+        <div class="speedometer">
+            <div class="dial"></div>
+            <div class="needle" id="needle"></div>
+            <div class="center-cap"></div>
+        </div>
+
+        <button id="gasPedal" class="pedal-btn">ACCELERA!</button>
+    </div>
+
+    <div id="explosionScreen" class="screen hidden">
+        <h1 class="glitch" data-text="DIO CAN 18 ANNI" id="secretPhrase">DIO CAN 18 ANNI</h1>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
